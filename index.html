@@ -11,7 +11,7 @@
 <header>
     <h1>kagerou Portfolio</h1>
     <p>Wild Rift Player / YouTube Creator</p>
-    
+
     <img src="70D36E11-3E7F-4DBC-8535-794AC9FE7191.png" alt="Kagerou" class="hero-image">
 </header>
 
@@ -51,14 +51,15 @@
 </section>
 
 <section>
-   <h2>YouTube Channel</h2>
+    <h2>YouTube Channel</h2>
 
-<p>
-<a href="https://www.youtube.com/@kagerou-wildrift" target="_blank">
-My YouTube Channel
-</a>
-</p>
+    <p>
+        <a href="https://www.youtube.com/@kagerou-wildrift" target="_blank">
+            My YouTube Channel
+        </a>
+    </p>
 </section>
+
 <section>
     <h2>Featured Video</h2>
 
@@ -70,33 +71,113 @@ My YouTube Channel
         frameborder="0"
         allowfullscreen>
     </iframe>
-
 </section>
-<footer>
-    <p>© 2026 kagerou</p>
-</footer>
+
+<section>
+    <h2>Skills</h2>
+
+    <p>Video Editing</p>
+    <progress value="90" max="100"></progress>
+
+    <p>HTML</p>
+    <progress value="70" max="100"></progress>
+
+    <p>CSS</p>
+    <progress value="60" max="100"></progress>
+
+    <p>JavaScript</p>
+    <progress value="50" max="100"></progress>
+</section>
+
+<section>
+    <h2>Timeline</h2>
+
+    <ul>
+        <li>2025 - YouTube活動開始</li>
+        <li>2026 - Sovereign到達</li>
+        <li>2026 - Portfolio Website作成</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Subscriber Goal</h2>
+
+    <p>Goal: 1000 Subscribers</p>
+
+    <progress value="872" max="1000"></progress>
+
+    <p>872 / 1000</p>
+</section>
 
 <section>
     <h2>JavaScript Demo</h2>
 
-    <button onclick="showMessage()">応援メッセージ</button>
+    <button onclick="showMessage()">
+        応援メッセージ
+    </button>
+
+    <button onclick="changeTheme()">
+        テーマ変更
+    </button>
+
+    <p id="message"></p>
 
     <p id="time"></p>
 </section>
 
+<footer>
+    <p>© 2026 kagerou</p>
+</footer>
+
 <script>
+
+const messages = [
+    "Thank you for visiting!",
+    "Have a great day!",
+    "Keep improving every day!",
+    "Welcome to my portfolio!"
+];
+
+let darkMode = false;
+
 function showMessage() {
-    alert("ご覧いただきありがとうございます！");
+
+    const random = Math.floor(Math.random() * messages.length);
+
+    document.getElementById("message").innerText =
+        messages[random];
+}
+
+function changeTheme() {
+
+    if (!darkMode) {
+
+        document.body.style.backgroundColor = "#222";
+        document.body.style.color = "white";
+
+        darkMode = true;
+
+    } else {
+
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+
+        darkMode = false;
+    }
 }
 
 function updateTime() {
+
     const now = new Date();
+
     document.getElementById("time").innerText =
         "現在時刻: " + now.toLocaleTimeString();
 }
 
 setInterval(updateTime, 1000);
+
 updateTime();
+
 </script>
 
 </body>
