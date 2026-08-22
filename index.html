@@ -76,12 +76,27 @@ My YouTube Channel
     <p>© 2026 kagerou</p>
 </footer>
 
-<button onclick="showMessage()">メッセージを見る</button>
+<section>
+    <h2>JavaScript Demo</h2>
+
+    <button onclick="showMessage()">応援メッセージ</button>
+
+    <p id="time"></p>
+</section>
 
 <script>
 function showMessage() {
     alert("ご覧いただきありがとうございます！");
 }
+
+function updateTime() {
+    const now = new Date();
+    document.getElementById("time").innerText =
+        "現在時刻: " + now.toLocaleTimeString();
+}
+
+setInterval(updateTime, 1000);
+updateTime();
 </script>
 
 </body>
